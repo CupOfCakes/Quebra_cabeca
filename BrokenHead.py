@@ -10,7 +10,7 @@ c = 0
 
 monitor = get_monitors()[0]
 
-galeriaPuzzle = 'C:/Users/heito/PycharmProjects/quebra_cabeca/galeriaPuzzle'
+galeriaPuzzle = 'galeriaPuzzle'
 
 if not os.path.exists(galeriaPuzzle):
     os.makedirs(galeriaPuzzle)
@@ -117,7 +117,7 @@ def atualizarInterfaceSettings():
 
 def saveImage():
     global img, img_name
-    save_path = 'C:/Users/heito/PycharmProjects/quebra_cabeca/galeriaPuzzle'
+    save_path = 'galeriaPuzzle'
     file_name = img_name
     save = os.path.join(save_path, file_name)
     if os.path.exists(save):
