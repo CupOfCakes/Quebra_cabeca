@@ -4,16 +4,21 @@ import pygame
 from PIL import Image, ImageFilter, ImageTk
 import random
 import os
-from screeninfo import get_monitors
+import stat
 
 c = 0
 
-monitor = get_monitors()[0]
-
 galeriaPuzzle = 'galeriaPuzzle'
 
-if not os.path.exists(galeriaPuzzle):
-    os.makedirs(galeriaPuzzle)
+try:
+    if not os.path.exists(galeriaPuzzle):
+        os.makedirs(galeriaPuzzle)
+        os.chmod(galeriaPuzzle, stat.S_IWRITE)  # Garante permissão de escrita
+except Exception as e:
+    print(f"Erro ao criar a pasta: {e}")
+    input("Pressione Enter para sair...")
+    exit()
+
 
 img_name = 'Nenhuma'
 
